@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ブックマーク管理アプリ</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="inner">
+        <div>
+            <h1>ブックマーク管理アプリ</h1>
+            <h2>ブックマークリスト</h2>
+            <table border="1">
+                <tr>
+                    <th>タイトル</th>
+                    <th>URL</th>
+                    <th>編集</th>
+                    <th>削除</th>
+                </tr>
+                <tr>
+                    <td>タイトル3</td>
+                    <td>http://aaaaurl/title3.html</td>
+                    <td>
+                        <button class="editBtn">編集</button>
+                    </td>
+                    <td>
+                        <button class="deleteBtn">削除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>タイトル4</td>
+                    <td>http://bbbburl/title4.html</td>
+                    <td class="btn">
+                        <button class="editBtn">編集</button>
+                    </td>
+                    <td class="btn">
+                        <button class="deleteBtn">削除</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <h2>ブックマークの追加</h2>
+            <form action="">
+                <div class="txtArea">
+                    <div class="group">
+                        <label for="">タイトル</label>
+                        <input class="txt" type="text" placeholder="タイトルを入力してください">
+                    </div>
+                    <div class="group">
+                        <label for="">URL</label>
+                        <input class="txt" type="text" placeholder="URLを入力してください">
+                    </div>
+                </div>
+                <button class="addBtn">追加</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

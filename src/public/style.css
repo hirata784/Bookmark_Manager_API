@@ -1,0 +1,77 @@
+h1 {
+    margin: 0;
+    border-bottom: 2px solid #000;
+    padding-left: 10px;
+}
+
+h2 {
+    margin: 10px 0;
+    width: 50%;
+    border-left: 8px solid #FFF;
+    padding-left: 10px;
+}
+
+.inner {
+    width: 80%;
+    padding: 10px;
+    margin: 0 auto;
+    background-color: yellowgreen;
+}
+
+table {
+    border-collapse: collapse;
+    background-color: #FFF;
+    width: 100%;
+}
+
+.btn {
+    width: 67px;
+}
+
+.editBtn {
+    background-color: blue;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+.deleteBtn {
+    background-color: red;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+.txtArea {
+    width: 100%;
+}
+
+.group {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0;
+}
+
+label {
+    font-size: 20px;
+}
+
+.txt {
+    padding: 5px;
+    font-size: 20px;
+    width: 50%;
+}
+
+.addBtn {
+    background-color: orange;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 5px;
+    width: 10%;
+}
