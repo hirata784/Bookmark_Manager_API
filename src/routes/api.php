@@ -16,4 +16,4 @@ use App\Models\Bookmark;
 |
 */
 
-Route::apiResource('api/bookmarks', BookmarkController::class);
+Route::apiResource('/bookmarks', BookmarkController::class);
