@@ -18,17 +18,27 @@ h2 {
     background-color: yellowgreen;
 }
 
+
 table {
+    width: 100%;
     border-collapse: collapse;
     background-color: #FFF;
+}
+
+.js-txtTitle,
+.js-txtUrl {
     width: 100%;
+    padding: 8px;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
 }
 
 .btn {
     width: 67px;
 }
 
-.editBtn {
+.updateBtn {
     background-color: blue;
     color: #fff;
     border: none;
