@@ -18,6 +18,9 @@ h2 {
     background-color: yellowgreen;
 }
 
+p {
+    margin: 0;
+}
 
 table {
     width: 100%;
@@ -28,7 +31,7 @@ table {
 .js-txtTitle,
 .js-txtUrl {
     width: 100%;
-    padding: 8px;
+    padding: 12px 8px;
     border: none;
     outline: none;
     box-sizing: border-box;
