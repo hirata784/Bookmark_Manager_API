@@ -6,6 +6,9 @@ const jsTitle = document.getElementById("js-title");
 const jsUrl = document.getElementById("js-url");
 const txtTitle = document.getElementsByClassName("js-txtTitle");
 const txtUrl = document.getElementsByClassName("js-txtUrl");
+// true：エラー発生 false：エラーなし
+let titleReturn = false;
+let urtReturn = false;
 
 // ブックマーク一覧を読み込む
 async function loadBookmark() {
@@ -58,9 +61,38 @@ async function loadBookmark() {
 // ブックマークを追加する
 async function addBookmark(e) {
     e.preventDefault();
+
     // 入力値を取得
     const title = jsTitle.value;
     const url = jsUrl.value;
+
+    // URL（https・http）の正規表現
+    var regex = new RegExp('^(https?:\\/\\/)?' +
+        '(([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}' +
+        '(\\/[-a-z\\d%_.~+]*)*', 'i');
+
+    // タイトルのチェック
+    if (title.length <= 0) {
+        document.getElementById("titleError").innerHTML = "タイトルを入力してください";
+        titleReturn = true;
+    } else {
+        document.getElementById("titleError").innerHTML = "";
+        titleReturn = false;
+    }
+
+    // URLのチェック
+    if (regex.test(url)) {
+        document.getElementById('urlError').innerHTML = "";
+        urtReturn = false;
+    } else {
+        document.getElementById('urlError').innerHTML = "有効なURLを入力してください。";
+        urtReturn = true;
+    }
+
+    // エラーが表示された場合、処理を中断する
+    if (titleReturn === true || urtReturn === true) {
+        return;
+    }
 
     // APIからデータを取得
     const res = await fetch(API_URL, {
@@ -73,6 +105,7 @@ async function addBookmark(e) {
 
     // JSONに変換
     const data = await res.json();
+    alert("ブックマークを追加しました");
 
     // 入力値をクリアする
     jsTitle.value = "";
@@ -99,6 +132,7 @@ async function updateBookmark(id, row) {
 
     // JSONに変換
     const data = await res.json();
+    alert("ブックマークを編集しました");
 
     // 再読み込み
     loadBookmark();
@@ -116,6 +150,7 @@ async function deleteBookmark(id) {
 
     // JSONに変換
     const data = await res.json();
+    alert("ブックマークを削除しました");
 
     // 再読み込み
     loadBookmark();
